@@ -10,13 +10,14 @@ abstract class Controller extends MyObject{
 
 	public function execute(){
 		$this -> methodName = $this -> request -> getActionName($this -> request);
-
-		if(!method_exists($this, $this -> methodName))
-			throw new Exception("$Action" . $this-> action."doesn't exist on controller");
+		// if(!method_exists($this, $this -> methodName))
+		// 	throw new Exception("$action" . $this-> action."doesn't exist on controller");
 
 		$methodName = $this -> methodName;
 		return $this -> $methodName();
 	}
 
 	abstract function defaultAction();
+
+	abstract function inscription();
 	}
